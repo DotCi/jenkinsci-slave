@@ -11,10 +11,10 @@ test -e /etc/redhat-release && dotciMode='yum'
 test -e /etc/debian_version && dotciMode='apt-get'
 case $dotciMode in
   'yum' )
-    time sudo yum -y install "$@"
+    time echo yum -y install "$@"
     ;;
   'apt-get' )
-    time sudo apt-get -y install "$@"
+    time echo apt-get -y install "$@"
     ;;
   *)
     echo "$0 has not been configured to handle the OS for `hostname -f`"
